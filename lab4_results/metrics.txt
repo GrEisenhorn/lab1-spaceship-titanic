@@ -1,0 +1,52 @@
+Лабораторная работа №4 — ансамблевые методы
+Параметры моделей заданы заранее, без подбора по тесту.
+
+Random Forest OOB accuracy: 0.7982
+Random Forest OOB error: 0.2018
+OOB рассчитана на заранее подготовленных признаках.
+
+           Модель  Accuracy обучения  Accuracy теста  ROC AUC
+    Random Forest             0.8366          0.7972   0.8826
+         AdaBoost             0.7814          0.7646   0.8643
+Gradient Boosting             0.8156          0.8029   0.8894
+
+Random Forest
+Параметры модели:
+{'bootstrap': True, 'ccp_alpha': 0.0, 'class_weight': None, 'criterion': 'gini', 'max_depth': 10, 'max_features': 'sqrt', 'max_leaf_nodes': None, 'max_samples': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 5, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'monotonic_cst': None, 'n_estimators': 300, 'n_jobs': -1, 'oob_score': True, 'random_state': 42, 'verbose': 0, 'warm_start': False}
+Отчёт на тестовой выборке:
+              precision    recall  f1-score   support
+
+Не перенесён     0.7875    0.8100    0.7986      1295
+   Перенесён     0.8072    0.7845    0.7957      1313
+
+    accuracy                         0.7972      2608
+   macro avg     0.7974    0.7973    0.7972      2608
+weighted avg     0.7974    0.7972    0.7971      2608
+
+
+AdaBoost
+Параметры модели:
+{'estimator': DecisionTreeClassifier(max_depth=1, random_state=42), 'learning_rate': 0.5, 'n_estimators': 200, 'random_state': 42}
+Отчёт на тестовой выборке:
+              precision    recall  f1-score   support
+
+Не перенесён     0.7363    0.8193    0.7756      1295
+   Перенесён     0.7995    0.7106    0.7524      1313
+
+    accuracy                         0.7646      2608
+   macro avg     0.7679    0.7649    0.7640      2608
+weighted avg     0.7681    0.7646    0.7639      2608
+
+
+Gradient Boosting
+Параметры модели:
+{'ccp_alpha': 0.0, 'criterion': 'deprecated', 'init': None, 'learning_rate': 0.05, 'loss': 'log_loss', 'max_depth': 3, 'max_features': None, 'max_leaf_nodes': None, 'min_impurity_decrease': 0.0, 'min_samples_leaf': 10, 'min_samples_split': 2, 'min_weight_fraction_leaf': 0.0, 'n_estimators': 200, 'n_iter_no_change': None, 'random_state': 42, 'subsample': 1.0, 'tol': 0.0001, 'validation_fraction': 0.1, 'verbose': 0, 'warm_start': False}
+Отчёт на тестовой выборке:
+              precision    recall  f1-score   support
+
+Не перенесён     0.8183    0.7753    0.7962      1295
+   Перенесён     0.7893    0.8302    0.8092      1313
+
+    accuracy                         0.8029      2608
+   macro avg     0.8038    0.8027    0.8027      2608
+weighted avg     0.8037    0.8029    0.8027      2608
